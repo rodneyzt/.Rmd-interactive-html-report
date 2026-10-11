@@ -1,0 +1,200 @@
+---
+title: ""
+author: "SUNNYBOY NGOBENI"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    css: custom.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Main Report {.tabset .tabset-pills}
+
+## Tabsets {.tabset .tabset-fade}
+
+### Tab 1: Parent Tab
+
+This is normal text in the first main tab.
+
+### Tab 2: This Tab Has Sub-Tabs {.tabset .tabset-fade}
+
+Anything written here appears *above* the sub-tabs.
+
+#### Sub-Tab A
+
+Content for the first nested tab goes here.
+
+#### Sub-Tab B
+
+Content for the second nested tab goes here.
+
+### Tab 3: Another Parent Tab
+
+The main tabset resumes normally here.
+
+## Accordions
+
+This interactive section demonstrates an accordion-driven document structure.
+
+<details name="my-accordion-group">
+
+<summary>📂 1. Parent Tab</summary>
+
+::: accordion-content
+This is normal text in the first main parent block.
+:::
+
+</details>
+
+<details name="my-accordion-group">
+
+<summary>📂 2. This Tab Has Sub-Tabs</summary>
+
+::::: accordion-content
+Anything written here appears *above* the sub-accordions.
+
+<details name="my-accordion-subgroup">
+
+<summary>📄 Sub-Tab A</summary>
+
+::: accordion-content
+Content for the first nested tab goes here.
+:::
+
+</details>
+
+<details name="my-accordion-subgroup">
+
+<summary>📄 Sub-Tab B</summary>
+
+::: accordion-content
+Content for the second nested tab goes here.
+:::
+
+</details>
+:::::
+
+</details>
+
+<details name="my-accordion-group">
+
+<summary>📂 3. Another Parent Tab</b></summary>
+
+::: accordion-content
+The main accordion hierarchy resumes normally here.
+:::
+
+</details>
+
+## Tabsets and Accorsions {.tabset .tabset-fade}
+
+### Accordions 1
+
+This interactive section demonstrates an accordion-driven document structure.
+
+<details name="my-accordion-group">
+
+<summary>📂 1. Parent Tab</summary>
+
+::: accordion-content
+This is normal text in the first main parent block.
+:::
+
+</details>
+
+<details name="my-accordion-group">
+
+<summary>📂 2. This Tab Has Sub-Tabs</summary>
+
+::::: accordion-content
+Anything written here appears *above* the sub-accordions.
+
+<details name="my-accordion-subgroup">
+
+<summary>📄 Sub-Tab A</summary>
+
+::: accordion-content
+Content for the first nested tab goes here.
+:::
+
+</details>
+
+<details name="my-accordion-subgroup">
+
+<summary>📄 Sub-Tab B</summary>
+
+::: accordion-content
+Content for the second nested tab goes here.
+:::
+
+</details>
+:::::
+
+</details>
+
+<details name="my-accordion-group">
+
+<summary>📂 3. Another Parent Tab</b></summary>
+
+::: accordion-content
+The main accordion hierarchy resumes normally here.
+:::
+
+</details>
+
+### Accordions 2
+
+This interactive section demonstrates an accordion-driven document structure.
+
+<details name="my-accordion-group">
+
+<summary>📂 1. Parent Tab</summary>
+
+::: accordion-content
+This is normal text in the first main parent block.
+:::
+
+</details>
+
+<details name="my-accordion-group">
+
+<summary>📂 2. This Tab Has Sub-Tabs</summary>
+
+::::: accordion-content
+Anything written here appears *above* the sub-accordions.
+
+<details name="my-accordion-subgroup">
+
+<summary>📄 Sub-Tab A</summary>
+
+::: accordion-content
+Content for the first nested tab goes here.
+:::
+
+</details>
+
+<details name="my-accordion-subgroup">
+
+<summary>📄 Sub-Tab B</summary>
+
+::: accordion-content
+Content for the second nested tab goes here.
+:::
+
+</details>
+:::::
+
+</details>
+
+<details name="my-accordion-group">
+
+<summary>📂 3. Another Parent Tab</b></summary>
+
+::: accordion-content
+The main accordion hierarchy resumes normally here.
+:::
+
+</details>
