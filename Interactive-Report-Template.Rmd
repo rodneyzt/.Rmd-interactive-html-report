@@ -12,7 +12,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Main Report {.tabset .tabset-pills}
-
+git remote add origin https://github.com/rodneyzt/report.git
+git branch -M main
+git push -u origin main
 ## Tabsets {.tabset .tabset-fade}
 
 ### Tab 1: Parent Tab
