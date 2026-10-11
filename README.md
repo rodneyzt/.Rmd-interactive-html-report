@@ -16,4 +16,4 @@ Using this structure helps to maximize information density while keeping the doc
 
 The contents inside the .Rmd files provides an idea to help you get started, edit it and make it your own. Take note of the main headers and subheaders so as to avoid breaking the `.tabset` structure.
 
-To see the interactive report template check: <https://rodneyzt.github.io/report/>
+To see the interactive report template check: <https://rodneyzt.github.io/report/>    
