@@ -204,12 +204,15 @@ id="toc-how-to-build-standard-nested-tabsets">💡 How to Build Standard
 <li><a href="#example" id="toc-example">Example</a></li>
 </ul></li>
 <li><a href="#accordions" id="toc-accordions">Accordions</a></li>
-<li><a href="#resources" id="toc-resources">Resources</a></li>
+<li><a href="#resources" id="toc-resources">Resources</a>
+<ul>
+<li><a href="#references" id="toc-references">References</a></li>
+<li><a href="#r-packages" id="toc-r-packages">R Packages</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </div>
 
-<p>```</p>
 <p>This interactive report demonstrates an tabsets-and accordion-driven
 document structure. Any text/code/images/etc typed here will appear
 underneath the report title but above the tabs.</p>
@@ -332,12 +335,16 @@ Example
 </details>
 </div>
 </details>
+<!-- This is an optional hidden trick to allow users to completely collapse all elements in a named accordion group -->
+<p align="right">
+<a href="#" onclick="document.querySelectorAll('details[name=\'my-accordion-group\']').forEach(d => d.removeAttribute('open')); return false;" style="font-size: 0.85em; color: grey;">Collapse
+All Accordions ↑</a>
+</p>
 </div>
 <div id="resources" class="section level2 tabset tabset-fade">
 <h2 class="tabset tabset-fade">Resources</h2>
-<p>This was generated with the help of Gemini AI.</p>
-<div id="references" class="section level4 unnumbered">
-<h4 class="unnumbered">References</h4>
+<div id="references" class="section level3 unnumbered">
+<h3 class="unnumbered">References</h3>
 <div id="refs_res" class="references csl-bib-body hanging-indent"
 entry-spacing="0">
 <div id="ref-gemini2026" class="csl-entry">
@@ -346,14 +353,46 @@ model response. <a href="https://google.com">https://google.com</a>.
 </div>
 </div>
 </div>
-<div id="r-packages" class="section level4 unnumbered">
-<h4 class="unnumbered">R Packages</h4>
+<div id="r-packages" class="section level3 unnumbered">
+<h3 class="unnumbered">R Packages</h3>
 <div id="refs_libs" class="references csl-bib-body hanging-indent"
 entry-spacing="0">
+<div id="ref-R-rmarkdown" class="csl-entry">
+Allaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier
+Luraschi, Kevin Ushey, Aron Atkins, et al. 2026. <em>Rmarkdown: Dynamic
+Documents for r</em>. <a
+href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>.
+</div>
 <div id="ref-R-base" class="csl-entry">
 R Core Team. 2026. <em>R: A Language and Environment for Statistical
 Computing</em>. Vienna, Austria: R Foundation for Statistical Computing.
 <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-knitr2014" class="csl-entry">
+Xie, Yihui. 2014. <span>“Knitr: A Comprehensive Tool for Reproducible
+Research in <span>R</span>.”</span> In <em>Implementing Reproducible
+Computational Research</em>, edited by Victoria Stodden, Friedrich
+Leisch, and Roger D. Peng. Chapman; Hall/CRC.
+</div>
+<div id="ref-knitr2015" class="csl-entry">
+———. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd
+ed. Boca Raton, Florida: Chapman; Hall/CRC. <a
+href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+<div id="ref-R-knitr" class="csl-entry">
+———. 2025. <em>Knitr: A General-Purpose Package for Dynamic Report
+Generation in r</em>. <a
+href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+<div id="ref-rmarkdown2018" class="csl-entry">
+Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <em>R Markdown:
+The Definitive Guide</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a
+href="https://yihui.org/rmarkdown/">https://yihui.org/rmarkdown/</a>.
+</div>
+<div id="ref-rmarkdown2020" class="csl-entry">
+Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. <em>R
+Markdown Cookbook</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a
+href="https://yihui.org/rmarkdown-cookbook">https://yihui.org/rmarkdown-cookbook</a>.
 </div>
 </div>
 </div>

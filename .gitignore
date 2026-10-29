@@ -7,3 +7,4 @@ Interactive report.Rmd
 Interactive-report.html
 *.Rmd
 style.css
+.gitignore

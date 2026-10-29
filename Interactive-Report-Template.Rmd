@@ -27,8 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # automatically create a bib database for R packages
 # first line excludes tidyverse and tidymodels from being cited as their individual packages
 
-knitr::write_bib(.packages(), 'packages.bib')
-```
+knitr::write_bib(c(.packages(), 'knitr','rmarkdown'), 'packages.bib')
 ```
 
 This interactive report demonstrates an tabsets-and accordion-driven document structure. Any text/code/images/etc typed here will appear underneath the report title but above the tabs.
@@ -136,16 +135,17 @@ Content for the second nested tab goes here.
 :::::::
 </details>
 
+<!-- This is an optional hidden trick to allow users to completely collapse all elements in a named accordion group -->
+<p align="right"><a href="#" onclick="document.querySelectorAll('details[name=\'my-accordion-group\']').forEach(d => d.removeAttribute('open')); return false;" style="font-size: 0.85em; color: grey;">Collapse All Accordions ↑</a></p>
+
 ## Resources {.tabset .tabset-fade}
 
-This was generated with the help of Gemini AI.
-
-#### References {.unnumbered}
+### References {.unnumbered}
 
 ::: {#refs_res}
 :::
 
-#### R Packages {.unnumbered}
+### R Packages {.unnumbered}
 
 ::: {#refs_libs}
 :::
