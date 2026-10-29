@@ -1,10 +1,11 @@
+.gitignore
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+.Rproj
 combined_report_preview.html
 Interactive report.Rmd
 Interactive-report.html
 *.Rmd
 style.css
-.gitignore
