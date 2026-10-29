@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+combined_report_preview.html
+Interactive report.Rmd
+Interactive-report.html
+*.Rmd
+style.css

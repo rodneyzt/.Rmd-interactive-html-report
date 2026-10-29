@@ -1,155 +1,98 @@
 ---
-title: ""
-author: "SUNNYBOY NGOBENI"
-date: "`r Sys.Date()`"
+title: "Interactive Report template"
+author: "Author: Sunnyboy Ngobeni"
+date: | 
+    First published: Thu, 29-Oct-2026;
+    Last updated: `r format(Sys.Date(),'%a, %e-%b-%Y')`
 output: 
   html_document:
-    css: custom.css
+    pandoc_args: ["--lua-filter","multibib.lua"] # split the .bib files 2 have multiple bibs
+    css: custom.css # for styling
+    self_contained: false # makes sure the fontAwesome use icons instead of square boxes
+    includes: 
+      after_body: footer.html
+    toc: true # warning: check footer.html to enable toc, currently its hidden even when set 2 true
+bibliography:
+  res: book.bib
+  libs: packages.bib
+nocite: '@*' # ensures all .bibs are printed out, even when not cited
+citeproc: false # ensures citations don't have a '?' next to them.
 ---
 
-```{r setup, include=FALSE}
+```{r}
+#| label: setup
+#| include: false
 knitr::opts_chunk$set(echo = TRUE)
+
+# automatically create a bib database for R packages
+# first line excludes tidyverse and tidymodels from being cited as their individual packages
+
+knitr::write_bib(.packages(), 'packages.bib')
+```
 ```
 
-# Main Report {.tabset .tabset-pills}
-git remote add origin https://github.com/rodneyzt/report.git
-git branch -M main
-git push -u origin main
+This interactive report demonstrates an tabsets-and accordion-driven document structure. Any text/code/images/etc typed here will appear underneath the report title but above the tabs.
+
+#  {.tabset .tabset-pills}
+
+Notice how this appears below the title and above the tabs, this is because the `{.tabset .tabset-pills}` is applied to an empty title.
+
 ## Tabsets {.tabset .tabset-fade}
 
-### Tab 1: Parent Tab
+This interactive section demonstrates an tabset-driven document structure.
 
-This is normal text in the first main tab.
+### 💡 How to Build Standard & Nested Tabsets 
 
-### Tab 2: This Tab Has Sub-Tabs {.tabset .tabset-fade}
+To create tabsets, follow this exact structure:
+
+1.  **Define the Parent Container:** Create a high-level header (e.g., `## Header 2`) and add `{.tabset}` right next to it.
+2.  **Add Tab Modifiers:** You can stack styles together inside the curly braces. For example, `{.tabset .tabset-pills .tabset-fade}` creates pill-shaped buttons with a smooth fade-in transition effect.
+3.  **Build the Sub-Tabs:** Every heading exactly one level down (e.g., `### Header 3`) will automatically become a clickable tab inside that parent.
+4.  **Nest Multiple Levels:** If you want tabs *inside* tabs, add `{.tabset}` to a sub-tab (e.g., `### Tab 2 {.tabset}`), which turns the next heading layer down (`#### Header 4`) into internal child tabs.
+
+### Example {.tabset .tabset-fade}
+#### Tab 1: Another Parent Tab
+
+The main tabset resumes normally here.
+
+#### Tab 2: This Tab Has Sub-Tabs {.tabset .tabset-fade}
 
 Anything written here appears *above* the sub-tabs.
 
-#### Sub-Tab A
+##### Sub-Tab A
 
 Content for the first nested tab goes here.
 
-#### Sub-Tab B
+##### Sub-Tab B
 
 Content for the second nested tab goes here.
-
-### Tab 3: Another Parent Tab
-
-The main tabset resumes normally here.
 
 ## Accordions
 
 This interactive section demonstrates an accordion-driven document structure.
 
-<details name="my-accordion-group">
+<details name="group">
 
-<summary>📂 1. Parent Tab</summary>
-
-::: accordion-content
-This is normal text in the first main parent block.
-:::
-
-</details>
-
-<details name="my-accordion-group">
-
-<summary>📂 2. This Tab Has Sub-Tabs</summary>
-
-::::: accordion-content
-Anything written here appears *above* the sub-accordions.
-
-<details name="my-accordion-subgroup">
-
-<summary>📄 Sub-Tab A</summary>
+<summary>💡 How to Build Collapsible Accordions</summary>
 
 ::: accordion-content
-Content for the first nested tab goes here.
+To create collapsible data blocks, follow this exact structure:
+
+1.  **Define the Accordion Container:** Put the content you need to hide/reveal between `<details>` and `</details>` HTML tags.
+
+2.  **Link Group Names:** Add a `name="my-group"` attribute to your `<details>` tags. Giving multiple accordions the same name ensures only one can be open at a time (opening one automatically closes the others).
+
+3.  **Set the Clickable Header:** Put the title or name of the box between `<summary>` and `</summary>` tags so it remains visible at all times.
+
+4.  **Apply Custom Styling:** Wrap your hidden text content within Pandoc fenced divs (`::: accordion-content` and `:::`) to pick up the padding and design rules from your `custom.css` file.
 :::
-
 </details>
 
-<details name="my-accordion-subgroup">
+<details name="group">
 
-<summary>📄 Sub-Tab B</summary>
+<summary> Example</summary>
 
-::: accordion-content
-Content for the second nested tab goes here.
-:::
-
-</details>
-:::::
-
-</details>
-
-<details name="my-accordion-group">
-
-<summary>📂 3. Another Parent Tab</b></summary>
-
-::: accordion-content
-The main accordion hierarchy resumes normally here.
-:::
-
-</details>
-
-## Tabsets and Accorsions {.tabset .tabset-fade}
-
-### Accordions 1
-
-This interactive section demonstrates an accordion-driven document structure.
-
-<details name="my-accordion-group">
-
-<summary>📂 1. Parent Tab</summary>
-
-::: accordion-content
-This is normal text in the first main parent block.
-:::
-
-</details>
-
-<details name="my-accordion-group">
-
-<summary>📂 2. This Tab Has Sub-Tabs</summary>
-
-::::: accordion-content
-Anything written here appears *above* the sub-accordions.
-
-<details name="my-accordion-subgroup">
-
-<summary>📄 Sub-Tab A</summary>
-
-::: accordion-content
-Content for the first nested tab goes here.
-:::
-
-</details>
-
-<details name="my-accordion-subgroup">
-
-<summary>📄 Sub-Tab B</summary>
-
-::: accordion-content
-Content for the second nested tab goes here.
-:::
-
-</details>
-:::::
-
-</details>
-
-<details name="my-accordion-group">
-
-<summary>📂 3. Another Parent Tab</b></summary>
-
-::: accordion-content
-The main accordion hierarchy resumes normally here.
-:::
-
-</details>
-
-### Accordions 2
-
-This interactive section demonstrates an accordion-driven document structure.
+::::::: accordion-content
 
 <details name="my-accordion-group">
 
@@ -190,13 +133,19 @@ Content for the second nested tab goes here.
 :::::
 
 </details>
+:::::::
+</details>
 
-<details name="my-accordion-group">
+## Resources {.tabset .tabset-fade}
 
-<summary>📂 3. Another Parent Tab</b></summary>
+This was generated with the help of Gemini AI.
 
-::: accordion-content
-The main accordion hierarchy resumes normally here.
+#### References {.unnumbered}
+
+::: {#refs_res}
 :::
 
-</details>
+#### R Packages {.unnumbered}
+
+::: {#refs_libs}
+:::
