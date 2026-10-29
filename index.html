@@ -333,12 +333,17 @@ Example
 </details>
 </div>
 </details>
-</div>
-</details>
 <!-- This is an optional hidden trick to allow users to completely collapse all elements in a named accordion group -->
 <p align="right">
 <a href="#" onclick="document.querySelectorAll('details[name=\'my-accordion-group\']').forEach(d => d.removeAttribute('open')); return false;" style="font-size: 0.85em; color: grey;">Collapse
-All Accordions ↑</a>
+All Minor Accordions ↑</a>
+</p>
+</div>
+</details>
+<!-- This is an optional hidden trick to allow users to completely collapse all elements in a named accordion group. 'group collapses all major accordions' -->
+<p align="right">
+<a href="#" onclick="document.querySelectorAll('details[name=\'group\']').forEach(d => d.removeAttribute('open')); return false;" style="font-size: 0.85em; color: grey;">Collapse
+All Major Accordions ↑</a>
 </p>
 </div>
 <div id="resources" class="section level2 tabset tabset-fade">
